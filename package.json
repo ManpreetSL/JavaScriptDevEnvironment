@@ -2,7 +2,13 @@
 	"name": "javascript-development-environment",
 	"version": "1.0.0",
 	"description": "JavaScript development environment template tutorial from a Plural Sight course",
-	"scripts": {},
+	"scripts": {
+		"prestart": "node ./buildScripts/startMessage.js",
+		"start": "npm run open:src",
+		"open:src": "node ./buildScripts/srcServer.js",
+		"ngrok": "ngrok http 3000",
+		"share": "npm-run-all --parallel open:src ngrok"
+	},
 	"author": "Manpreet Singh Lalria",
 	"license": "MIT",
 	"dependencies": {
@@ -29,9 +35,9 @@
 		"jsdom": "9.8.0",
 		"json-schema-faker": "0.3.6",
 		"json-server": "0.8.22",
-		"localtunnel": "1.8.1",
 		"mocha": "3.1.2",
 		"nock": "8.1.0",
+		"ngrok": "^3.2.7",
 		"npm-run-all": "3.1.1",
 		"nsp": "2.6.2",
 		"numeral": "1.5.3",
